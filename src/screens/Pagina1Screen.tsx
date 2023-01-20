@@ -15,15 +15,21 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                 title='Ir a pagina 2'
                 onPress={() => navigation.navigate('Pagina2Screen')}
             />
+
             <Text>Navegar con argumentos</Text>
-            <TouchableOpacity
-                onPress={() => navigation.navigate('PersonaScreen', {
-                    id: 1,
-                    nombre: 'Natalia'
-                })}
-            >
-                <Text>Natalia</Text>
-            </TouchableOpacity>
+
+            <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity
+                    style={styles.botonGrande}
+                    onPress={() => navigation.navigate('PersonaScreen', {
+                        id: 1,
+                        nombre: 'Natalia'
+                    })}
+                >
+                    <Text style={styles.botonGrandeTexto}>Natalia</Text>
+                </TouchableOpacity>
+            </View>
+
         </View>
     )
 }
