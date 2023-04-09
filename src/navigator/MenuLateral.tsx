@@ -15,8 +15,9 @@ export const MenuLateral = () => {
         <Drawer.Navigator
             screenOptions={({ navigation }) => ({
                 drawerType: width > height ? 'permanent' : 'front',
+                // esto cambia el icono hamburguesa
                 headerLeft: (() => {
-                    return <Logo height={100} width={25} color={"green"} onPress={navigation.toggleDrawer}></Logo>
+                    return <Logo height={100} width={25} color={"green"} style={{ marginLeft: 20 }} onPress={navigation.toggleDrawer}></Logo>
                 })
             })}
 
