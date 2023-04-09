@@ -3,6 +3,7 @@ import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, View, useWindowDimensions, TouchableOpacity } from 'react-native';
 import { styles } from '../theme/appTheme';
+import Logo from './hamburger.svg';
 
 const Drawer = createDrawerNavigator();
 
@@ -12,9 +13,12 @@ export const MenuLateral = () => {
 
     return (
         <Drawer.Navigator
-            screenOptions={{
-                drawerType: width > height ? 'permanent' : 'front'
-            }}
+            screenOptions={({ navigation }) => ({
+                drawerType: width > height ? 'permanent' : 'front',
+                headerLeft: (() => {
+                    return <Logo height={100} width={25} color={"green"} onPress={navigation.toggleDrawer}></Logo>
+                })
+            })}
 
             drawerContent={(props) => <Contenido {...props} />}
 
